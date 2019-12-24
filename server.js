@@ -9,3 +9,11 @@ app.use(
         extended: true,
     })
 )
+
+app.get('/', (request, response) => {
+    response.json({ 'Welcome Note': 'Welcome to the API of rides app' })
+})
+
+app.listen(port, ()=> {
+    console.log(`Listening on port ${port}`)
+})
