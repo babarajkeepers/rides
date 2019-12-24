@@ -11,11 +11,11 @@ app.use(
     })
 )
 
-app.get('/api', (request, response) => {
+app.get('/', (request, response) => {
     response.json({ 'Welcome Note': 'Welcome to the API of rides app' })
 })
 
-app.get('/api/students', db.getStudents)
+app.get('/students', db.getStudents)
 
 app.listen(port, ()=> {
     console.log(`Listening on port ${port}`)
