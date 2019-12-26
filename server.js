@@ -15,7 +15,10 @@ app.get('/', (request, response) => {
     response.json({ 'Welcome Note': 'Welcome to the API of rides app' })
 })
 
-app.get('/students', db.getStudents)
+app.get('/students', db.getAllStudents())
+app.get('/universities', db.getAllUniversities())
+app.get('/students/:university', db.getAllStudentsByUniversity())
+app.get('/drivers/:university', db.getAllDriversByUniversity())
 
 app.listen(port, ()=> {
     console.log(`Listening on port ${port}`)
