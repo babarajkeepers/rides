@@ -17,7 +17,7 @@ const getAllStudents = (request, response) => {
 }
 
 const getAllStudentsByUniversity = (request, response) => {
-    const university = parseInt(request.params.university)
+    const university = request.params.university
 
     pool.query('SELECT * FROM users where university_name = $1 ORDER BY id ASC', [university], (error, results) => {
         if (error) {
@@ -28,7 +28,7 @@ const getAllStudentsByUniversity = (request, response) => {
 }
 
 const getAllDriversByUniversity = (request, response) => {
-    const university = parseInt(request.params.university)
+    const university = request.params.university
 
     pool.query('SELECT * FROM users where university_name = $1 and isDriver = $2 ORDER BY id ASC', [university, true], (error, results) => {
         if (error) {
